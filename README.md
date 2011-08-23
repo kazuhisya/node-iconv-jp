@@ -1,19 +1,21 @@
-# node-iconv
-
+# node-iconv-jp
 Text recoding in JavaScript for fun and profit!
+
+* Forked from: https://github.com/xenophy/node-iconv
+* Original: https://github.com/bnoordhuis/node-iconv
 
 ## Installing with [npm](http://npmjs.org/)
 
-	npm install iconv
+	npm install iconv-jp
 
-Note that the npm-ified version of node-iconv only
+Note that the npm-ified version of node-iconv-jp only
 works with node.js >= v0.3.0.
 
 ## Cloning the repository
 
 If you are developing against node.js v0.3.0 or later:
 
-	git clone git://github.com/bnoordhuis/node-iconv.git
+	git clone git@github.com:kazuhisya/node-iconv-jp.git
 
 If you are developing against node.js v0.2.x:
 
@@ -38,7 +40,7 @@ Encode from one character encoding to another:
 
 	// convert from UTF-8 to ISO-8859-1
 	var Buffer = require('buffer').Buffer;
-	var Iconv  = require('iconv').Iconv;
+	var Iconv  = require('iconv-jp').Iconv;
 	var assert = require('assert');
 	
 	var iconv = new Iconv('UTF-8', 'ISO-8859-1');
@@ -47,11 +49,11 @@ Encode from one character encoding to another:
 	assert.equals(buffer.inspect(), buffer2.inspect());
 	// do something useful with the buffers
 
-Look at test.js for more examples and node-iconv's behaviour under error conditions.
+Look at test.js for more examples and node-iconv-jp's behaviour under error conditions.
 
 ## Notes
 
-Things to keep in mind when you work with node-iconv.
+Things to keep in mind when you work with node-iconv-jp.
 
 ### Chunked data
 
@@ -67,7 +69,7 @@ Characters are not always translatable to another encoding. The UTF-8 string
 "ça va が", for example, cannot be represented in plain 7-bits ASCII without
 some loss of fidelity.
 
-By default, node-iconv throws EILSEQ when untranslatabe characters are encountered
+By default, node-iconv-jp throws EILSEQ when untranslatabe characters are encountered
 but this can be customized. Quoting the `iconv_open(3)` man page:
 
 	//TRANSLIT
